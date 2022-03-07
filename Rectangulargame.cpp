@@ -16,7 +16,6 @@ bool Timlap(int* arr){
         }
     }
     return true;
-    
 }
 
 bool symetricalstr(string n)
@@ -39,6 +38,7 @@ int main()
     }else{
         cout << " No";
     }
+    
 
 
 }
