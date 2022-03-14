@@ -3,9 +3,15 @@
 #include<iomanip>
 using namespace std;
 
-bool check(int a,int b)
+int findExtra(int a[],int b[],int sizea)
 {
-    if(a == b)
+   for(int i =0;i <sizea;i++ )
+   {
+       if(a[i] != b[i])
+       {
+            return b[i];
+       }
+   }
 }
 int main()
 {	
@@ -22,6 +28,6 @@ int main()
    } 
    sort(a,a+n);
    sort(b,b+n);
-   
+   cout << findExtra(a,b,n);
 
 } 

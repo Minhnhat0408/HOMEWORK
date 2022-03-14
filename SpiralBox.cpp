@@ -36,7 +36,6 @@ int main()
         {
             arr[i][j] = num;
             num++;
-            //cout << "j " << j <<" i " << i <<" ";
         }
         if(add > 0)
         {

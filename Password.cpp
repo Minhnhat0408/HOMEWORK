@@ -15,7 +15,7 @@ int main()
     {
         cin >> pass[i];
     }
-    for(int i =0 ; i < n;i++)
+    for(int i =0 ; i < n-1;i++)
     {   
         reverse(pass[i].begin(),pass[i].end());
         for(int j = i+1;j < n;j++)

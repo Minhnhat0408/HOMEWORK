@@ -23,10 +23,33 @@ vector <string> readfile(string namefile)
     return lisword;
 }
 
+void customH(const string filename)
+{
+    char tmp ;
+	vector <string> v;
+	string word = "";
+	while(tmp != '.')
+	{
+		cin >> tmp;
+		if(tmp == ',' || tmp == '.')
+		{
+			v.push_back(word);
+			word = "";
+		}else{
+			word+= tmp;
+		}
+	}
+	ofstream file(filename);
+    for(int i =0;i < v.size();i++)
+    {
+        file << v[i] << endl;
+    }
+}
+
 void initGame(string& hiddenWord,string& guessWord,int& guessCount)
 {
-    
-    hiddenWord = readfile("HIDDENW.doc")[rand()%20];
+    int n = readfile("HIDDENW.doc").size();
+    hiddenWord = readfile("HIDDENW.doc")[rand()%n];
     transform(hiddenWord.begin(),hiddenWord.end(),hiddenWord.begin(),::toupper);
     guessWord = string(hiddenWord.length(),'_');
     guessCount = 0;
@@ -160,6 +183,7 @@ int main()
     string hiddenWord;
     string guessWord;
     int wrongGuess;
+    customH("HIDDENW.doc");
 	initGame(hiddenWord,guessWord,wrongGuess);
     while(!Gameover(hiddenWord,guessWord,wrongGuess))
     {
